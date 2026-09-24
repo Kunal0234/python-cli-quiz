@@ -5,16 +5,21 @@ A simple command-line multiple-choice quiz application built with Python.
 ## Features
 
 * Multiple-choice questions
+* Questions appear in random order
 * Displays questions one by one
 * User can select an answer
+* Input validation for non-numeric input
+* Validates answer options between 1-4
 * Instant correct/wrong feedback
 * Score tracking
+* Current score display
 * Final score display
-* Quiz logic organized using a Python function
+* Quiz logic organized using Python functions
 
 ## Technologies Used
 
 * Python
+* Random module
 
 ## How to Run
 
@@ -30,4 +35,10 @@ python main.py
 
 🚧 Currently under development.
 
-More features will be added as I continue learning Python.
+### Planned Features
+
+* Replay quiz
+* Store questions in JSON
+* Categories and difficulty levels
+* High score tracking
+* Further code cleanup and improvements
