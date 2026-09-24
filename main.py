@@ -64,7 +64,7 @@ def run_quiz():
                     print("Please enter a valid option (1-4)!")
                     continue
                 
-            except:
+            except ValueError:
                 print("Please enter a number!")
 
         if answer == question['answer']:
@@ -76,7 +76,17 @@ def run_quiz():
             print("Wrong answer!❌")
             print(f"Current Score : {current_score}\n")
 
-    print(f"Your Total score is :- {current_score}")
+    print(f"Your Total score is :- {current_score}/10")
 
+while True:
+    run_quiz()
 
-run_quiz()
+    while True:
+        run_again = input("Do you want to play again? (y/n): ").lower()
+
+        if run_again == "y":
+            break
+        elif run_again == "n":
+            exit()
+        else:
+            print("Please enter y or n\n")

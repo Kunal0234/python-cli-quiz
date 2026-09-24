@@ -15,6 +15,8 @@ A simple command-line multiple-choice quiz application built with Python.
 * Current score display
 * Final score display
 * Quiz logic organized using Python functions
+* Replay the quiz after completion
+* Validates replay input (y/n)
 
 ## Technologies Used
 
