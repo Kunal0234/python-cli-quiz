@@ -1,3 +1,4 @@
+import random
 questions =[ {
     "question": "What is Python?",
     "options": ["Programming Language", "Database", "Operating System", "Web Browser"],
@@ -45,20 +46,37 @@ print("You will answer multiple-choice questions.")
 print("Let's begin!\n")
 
 def run_quiz():
- current_score = 0
- for index,question in enumerate(questions):
-    print(f"{index+1}.{question["question"]}\n")
-    for option_index, option in enumerate(question["options"]):
-     print(option_index+1,option)
-    answer = int(input("\nEnter your answer:- "))
-    if answer == question['answer']:
-      print("Correct!✅")
-      current_score +=1
-      print(f"Current Score : {current_score}\n")
-      
-    else:
-      print("Wrong answer!❌")
-      print(f"Current Score :{current_score}\n")
+    current_score = 0
+    random.shuffle(questions)
 
- print(f"Your Total score is :- {current_score}")
+    for index, question in enumerate(questions):
+        print(f"{index + 1}. {question['question']}\n")
+
+        for option_index, option in enumerate(question["options"]):
+            print(option_index + 1, option)
+
+        while True:
+            try:
+                answer = int(input("\nEnter your answer:- "))
+                if  1<=answer<=4:
+                    break
+                else:
+                    print("Please enter a valid option (1-4)!")
+                    continue
+                
+            except:
+                print("Please enter a number!")
+
+        if answer == question['answer']:
+            print("Correct!✅")
+            current_score += 1
+            print(f"Current Score : {current_score}\n")
+
+        else:
+            print("Wrong answer!❌")
+            print(f"Current Score : {current_score}\n")
+
+    print(f"Your Total score is :- {current_score}")
+
+
 run_quiz()
