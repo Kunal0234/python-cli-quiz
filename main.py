@@ -4,6 +4,9 @@ print("==============================\n    PYTHON CLI QUIZ  \n==================
 print("Welcome to the python Quiz!\n")
 print("You will answer multiple-choice questions.")
 print("Let's begin!\n")
+name = input("Enter your name :-  ")
+print(f"Welcome {name}! Lets's start the quiz")
+
 with open("questions.json", "r") as file:
     questions = json.load(file)
 def run_quiz():
@@ -36,10 +39,17 @@ def run_quiz():
         else:
             print("Wrong answer!❌")
             print(f"Current Score : {current_score}\n")
-
-    print(f"Your Total score is :- {current_score}/10")
+    print("========== QUIZ RESULT ==========\n")
+    print(f"{name}, Your Total score is :- {current_score}/10")
+    print(f"Percentage : {(current_score/10)*100}%")
+    if current_score >= 4:
+        print("Result : Passed\n")
+    else:
+        print("Result : Failed\n") 
+    print("=================================")
 
 while True:
+    
     run_quiz()
 
     while True:
@@ -51,3 +61,4 @@ while True:
             exit()
         else:
             print("Please enter y or n\n")
+
